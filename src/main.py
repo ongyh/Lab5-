@@ -8,19 +8,6 @@ from hal import hal_lcd as LCD
 from hal import hal_keypad as keypad
 
 
-def led_thread():
-    global delay
-
-    delay = 0
-
-    while(True):
-        if delay != 0:
-            led.set_output(20,1)
-            sleep(delay)
-            led.set_output(20, 0)
-            sleep(delay)
-
-
 def main():
     #Initiallize LED driver
     led.init()
