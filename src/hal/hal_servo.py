@@ -8,7 +8,7 @@ def init():
     GPIO.setwarnings(False)
     GPIO.setup(26, GPIO.OUT)  # set GPIO 26 as output
 
-
+#position [0 deg to 180 deg]
 def set_servo_position(position):
     PWM = GPIO.PWM(26, 50)  # set 50Hz PWM output at GPIO26
 
