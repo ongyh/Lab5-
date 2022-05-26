@@ -2,27 +2,32 @@
 from time import sleep
 
 # Local imports
-
 from hal import hal_keypad as keypad
 from hal import hal_led as led
 from hal import hal_lcd as LCD
+from hal import hal_adc as adc
+from hal import hal_servo as servo
 
+import adc_servo_controller as adc_c
 import led_control
-
+import clock
 
 def main():
     #Initiallize LED driver
-    led.init()
-    led_control.led_control_init()
+    #led.init()                                             #for LED code
+    #led_control.led_control_init()
+    #adc.init()                                             #for adc code
+    #servo.init()
+    #adc_c.adc_servo_init()
 
+    clock.clock_init()
 
-    #led_control.check_keypad(LCD)
-    led_control.check_keypad(LCD)
+    #led_control.check_keypad(LCD)                           #for led code
+    #adc_c.check_adc_servo()                                #for adc code
 
     #Initiallize Keypad driver
-    led_control.led_control_init()
-    keypad.init()
-    #led_control.check_keypad(LCD)
+    #led_control.led_control_init()                          #for led code
+    #keypad.init()                                           #for led code
 
     # Instantiate and initialize the LCD driver
     lcd = LCD.lcd()
